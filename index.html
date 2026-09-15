@@ -87,21 +87,21 @@
     color: var(--ink);
     font-family: var(--sans);
     font-size: 16px;
-    line-height: 1.68;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
 
   .wrap {
     width: min(100%, 1080px);
     margin-inline: auto;
-    padding: 0 1.5rem 6rem;
+    padding: 0 1.5rem 5rem;
   }
 
   /* ---------- masthead ---------- */
   .masthead {
     display: grid;
-    gap: 1.5rem;
-    padding: 3.5rem 0 2.25rem;
+    gap: 1.1rem;
+    padding: 3rem 0 1.75rem;
     border-bottom: 2px solid var(--navy);
   }
   .eyebrow {
@@ -113,21 +113,13 @@
   }
   h1 {
     font-family: var(--serif);
-    font-size: clamp(2.3rem, 5.5vw, 3.4rem);
+    font-size: clamp(2.1rem, 5vw, 3rem);
     font-weight: 700;
-    line-height: 1.04;
+    line-height: 1.05;
     letter-spacing: -.035em;
     color: var(--navy);
     margin: 0;
     text-wrap: balance;
-  }
-  .standfirst {
-    font-family: var(--serif);
-    font-size: clamp(1.1rem, 2vw, 1.28rem);
-    line-height: 1.5;
-    color: var(--ink);
-
-    margin: 0;
   }
   .meta {
     display: flex;
@@ -139,31 +131,23 @@
   .meta b { color: var(--ink); font-weight: 700; }
 
   /* ---------- sections ---------- */
-  section { padding-top: 3.25rem; }
+  section { padding-top: 2.75rem; }
   h2 {
     font-family: var(--serif);
-    font-size: clamp(1.5rem, 3vw, 1.85rem);
+    font-size: clamp(1.45rem, 3vw, 1.75rem);
     font-weight: 700;
     letter-spacing: -.025em;
     color: var(--navy);
-    margin: 0 0 .35rem;
+    margin: 0 0 .3rem;
     text-wrap: balance;
   }
   .section-note {
     font-size: .875rem;
     color: var(--ink-soft);
-    margin: 0 0 1.5rem;
-
+    margin: 0 0 1.25rem;
   }
-  h3 {
-    font-size: .78rem;
-    font-weight: 800;
-    letter-spacing: .13em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin: 2rem 0 .75rem;
-  }
-  p { max-width: none; }
+  p { margin: 0 0 .9rem; }
+  p:last-child { margin-bottom: 0; }
   code {
     font-family: var(--sans);
     font-weight: 700;
@@ -173,24 +157,44 @@
     padding: .05rem .35rem;
     border-radius: 4px;
   }
-  a { color: var(--teal); text-decoration-thickness: 1px; text-underline-offset: 2px; }
-  a:focus-visible, summary:focus-visible {
+  a { color: var(--teal); text-underline-offset: 2px; }
+  a:focus-visible {
     outline: 3px solid color-mix(in srgb, var(--teal) 50%, transparent);
     outline-offset: 3px;
     border-radius: 4px;
   }
 
-  /* ---------- the call ---------- */
-  .call {
+  /* ---------- headline figures ---------- */
+  .figs {
     display: grid;
-    gap: 1.1rem;
-    background: var(--mist);
-    border-left: 4px solid var(--sand);
-    padding: 1.75rem 1.9rem;
-    border-radius: 0 10px 10px 0;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 1.75rem;
   }
-  .call p { margin: 0; }
-  .call strong { color: var(--navy); }
+  .fig {
+    background: var(--surface);
+    padding: 1.05rem 1.2rem;
+    display: grid;
+    gap: .2rem;
+  }
+  .fig b {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  .fig span {
+    font-size: .74rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    line-height: 1.35;
+  }
 
   /* ---------- tables ---------- */
   .scroller {
@@ -213,13 +217,13 @@
     letter-spacing: .1em;
     text-transform: uppercase;
     color: var(--ink-soft);
-    padding: .85rem 1rem;
+    padding: .8rem 1rem;
     border-bottom: 1px solid var(--rule);
     white-space: nowrap;
     background: var(--mist);
   }
   tbody td {
-    padding: .8rem 1rem;
+    padding: .75rem 1rem;
     border-bottom: 1px solid var(--rule-soft);
     vertical-align: top;
   }
@@ -264,7 +268,7 @@
     flex-wrap: wrap;
     align-items: baseline;
     gap: .35rem .85rem;
-    padding: .8rem 1.15rem;
+    padding: .75rem 1.15rem;
     background: var(--mist);
     border-bottom: 1px solid var(--rule);
   }
@@ -280,8 +284,8 @@
   .slot {
     display: grid;
     grid-template-columns: 7.5rem 1fr;
-    gap: .35rem 1rem;
-    padding: .95rem 1.15rem;
+    gap: .3rem 1rem;
+    padding: .9rem 1.15rem;
     border-bottom: 1px solid var(--rule-soft);
     border-left: 3px solid transparent;
   }
@@ -297,7 +301,7 @@
     color: var(--ink-soft);
     padding-top: .18rem;
   }
-  .slot-body { display: grid; gap: .3rem; }
+  .slot-body { display: grid; gap: .28rem; }
   .slot-title {
     font-weight: 700;
     color: var(--navy);
@@ -308,14 +312,12 @@
     font-size: .78rem;
     color: var(--ink-soft);
     font-variant-numeric: tabular-nums;
+    line-height: 1.5;
   }
   .slot-data code {
-    font-family: var(--sans);
     font-weight: 600;
     color: var(--ink);
     background: var(--mist);
-    padding: .05rem .35rem;
-    border-radius: 4px;
   }
   .tag-refresh {
     display: inline-block;
@@ -333,134 +335,42 @@
     .slot { grid-template-columns: 1fr; }
   }
 
-  /* ---------- two mechanics ---------- */
-  .split {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
-  }
-  .mech {
-    background: var(--surface);
-    border: 1px solid var(--rule);
-    border-top: 3px solid var(--teal);
-    border-radius: 0 0 10px 10px;
-    padding: 1.35rem 1.5rem;
-    display: grid;
-    gap: .6rem;
-    align-content: start;
-  }
-  .mech-b { border-top-color: var(--sand); }
-  .mech-c { border-top-color: var(--ink-soft); }
-  .mech-kicker {
-    font-size: .68rem;
-    font-weight: 800;
-    letter-spacing: .11em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-  }
-  .mech h4 {
-    font-family: var(--serif);
-    font-size: 1.15rem;
-    font-weight: 700;
-    letter-spacing: -.02em;
-    color: var(--navy);
-    margin: 0;
-    line-height: 1.25;
-  }
-  .mech p { margin: 0; font-size: .89rem; }
-  .mech dl {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: .3rem .85rem;
-    margin: .3rem 0 0;
-    font-size: .84rem;
-  }
-  .mech dt {
-    font-weight: 800;
-    font-size: .66rem;
-    letter-spacing: .09em;
-    text-transform: uppercase;
-    color: var(--teal);
-    padding-top: .28rem;
-  }
-  .mech-b dt { color: var(--gold); }
-  .mech-c dt { color: var(--ink-soft); }
-  .mech dd { margin: 0; }
-
-  .evidence {
-    background: var(--mist);
-    border-left: 4px solid var(--teal);
-    border-radius: 0 10px 10px 0;
-    padding: 1.5rem 1.75rem;
-    display: grid;
-    gap: .9rem;
-    margin-top: 1rem;
-  }
-  .evidence p { margin: 0; font-size: .92rem; }
-  .evidence strong { color: var(--navy); }
-  .figs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.75rem;
-    padding-top: .2rem;
-  }
-  .fig { display: grid; gap: .1rem; }
-  .fig b {
-    font-family: var(--serif);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--navy);
-    line-height: 1;
-    font-variant-numeric: tabular-nums;
-  }
-  .fig span {
-    font-size: .7rem;
-    font-weight: 700;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-  }
-  .quotes { display: grid; gap: .45rem; margin: 0; padding: 0; list-style: none; }
-  .quotes li {
-    font-family: var(--serif);
-    font-size: .95rem;
-    color: var(--ink);
-    padding-left: 1rem;
-    border-left: 2px solid var(--sand);
-  }
-
-  /* ---------- guardrails ---------- */
-  .rails { display: grid; gap: .75rem; }
+  /* ---------- numbered / flagged items ---------- */
+  .rails { display: grid; gap: .7rem; }
   .rail {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1.6rem 1fr;
     gap: .9rem;
     align-items: start;
-    padding: .95rem 1.15rem;
+    padding: .9rem 1.15rem;
     background: var(--surface);
     border: 1px solid var(--rule);
     border-radius: 10px;
   }
   .rail-hard { border-color: color-mix(in srgb, var(--brick) 35%, transparent); background: var(--brick-bg); }
+  .rail-open { border-style: dashed; }
   .rail-mark {
     font-family: var(--serif);
     font-weight: 700;
-    font-size: .95rem;
-    color: var(--brick);
+    font-size: 1rem;
+    color: var(--gold);
     font-variant-numeric: tabular-nums;
-    line-height: 1.5;
+    line-height: 1.45;
+    text-align: center;
   }
+  .rail-hard .rail-mark { color: var(--brick); }
+  .rail-ok .rail-mark { color: var(--moss); }
   .rail p { margin: 0; font-size: .89rem; }
   .rail b { color: var(--navy); }
   .rail-hard b { color: var(--brick); }
 
-  /* ---------- flow ---------- */
-  .flow { display: grid; gap: 0; counter-reset: step; }
+  /* ---------- rhythm ---------- */
+  .flow { display: grid; }
   .step {
     display: grid;
     grid-template-columns: 5.5rem 1fr;
     gap: 1rem;
-    padding: .9rem 0;
+    padding: .8rem 0;
     border-bottom: 1px solid var(--rule-soft);
   }
   .step:last-child { border-bottom: 0; }
@@ -478,170 +388,45 @@
   .key {
     display: flex;
     flex-wrap: wrap;
-    gap: .6rem 1.5rem;
+    gap: .5rem 1.5rem;
     font-size: .78rem;
     color: var(--ink-soft);
-    margin-bottom: 1.1rem;
+    margin-bottom: 1rem;
   }
   .key span { display: inline-flex; align-items: center; gap: .45rem; }
   .swatch { width: 3px; height: 1rem; border-radius: 2px; display: inline-block; }
 
   footer {
-    margin-top: 3.5rem;
-    padding-top: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 1.35rem;
     border-top: 1px solid var(--rule);
     font-size: .8rem;
     color: var(--ink-soft);
   }
-
 </style>
 
 <div class="wrap">
 
   <header class="masthead">
-    <div class="eyebrow">Best Care Insurance Brokers &middot; SEO content brief</div>
-    <h1>Eight weeks of blog content, built on what South Africans actually search</h1>
-    <p class="standfirst">Twenty-four commissioned posts and a ranked backlog, written to be quoted by ChatGPT, Gemini and Google&rsquo;s AI Overviews first and to rank on Google second &mdash; chosen from South African search data, and filtered through what a licensed FSP is allowed to publish.</p>
+    <div class="eyebrow">Best Care Insurance Brokers</div>
+    <h1>Content plan, weeks 1&ndash;8</h1>
     <div class="meta">
       <span><b>Prepared</b> 15 September 2026</span>
       <span><b>Cadence</b> 3 posts / week</span>
-      <span><b>Format</b> /blog-article-hybrid</span>
       <span><b>Sign-off</b> Anton, weekly</span>
-      <span><b>Data</b> Ubersuggest, South Africa (loc 2710), pulled 15 Sep 2026</span>
+      <span><b>Keyword data</b> Ubersuggest, South Africa</span>
+    </div>
+    <div class="figs">
+      <div class="fig"><b>24</b><span>Posts commissioned, 5 of them refreshes of existing articles</span></div>
+      <div class="fig"><b>14</b><span>Further titles in the ranked backlog</span></div>
+      <div class="fig"><b>~13,000</b><span>Monthly searches reachable at difficulty under 35</span></div>
+      <div class="fig"><b>3</b><span>Priority clusters where we currently have nothing</span></div>
     </div>
   </header>
 
   <section>
-    <h2>The call</h2>
-    <div class="call">
-      <p><strong>We are not going to win head terms, and we should stop wanting to.</strong> Every high-volume query in this space &mdash; &ldquo;car insurance&rdquo;, &ldquo;household insurance&rdquo;, &ldquo;best car insurance South Africa&rdquo; &mdash; is held by direct insurers with domain authority in the 33&ndash;64 range and years of link equity. bestcare.co.za is a fifteen-year-old domain with no current content and effectively no live link profile.</p>
-      <p><strong>What is genuinely open is the explainer layer.</strong> Across the clusters below there are roughly <b>13,000 monthly searches</b> sitting at SEO difficulty under 35, mostly phrased as questions, and mostly answered today by thin product pages rather than by anyone actually explaining the thing. A broker is the natural author of that content in a way an insurer is not.</p>
-      <p><strong>Google clicks are the slow curve; LLM citation is the fast one.</strong> Judged on organic traffic alone the ceiling here is modest &mdash; the best informational post we found in SA motor insurance is iWyze&rsquo;s retail-vs-market-value explainer at roughly 412 estimated visits a month, and Auto &amp; General&rsquo;s blog posts land between 21 and 63 visits each. But being <i>quoted</i> in an AI answer doesn&rsquo;t require position one. It requires being in the retrieved set with the most extractable answer on the page, and on difficulty-13 South African questions that is reachable in weeks rather than quarters. That is why this plan is written LLM-first, and why we measure citation before we measure clicks.</p>
-      <p><strong>The three highest-value openings are unclaimed.</strong> Vehicle valuation (retail vs market vs trade), e-hailing cover for Uber and Bolt drivers, and what to do when a claim is rejected. All three sit at SEO difficulty 13&ndash;15, all three convert to a broker conversation, and Best Care has nothing on any of them.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>The LLM visibility play</h2>
-    <p class="section-note">Anton&rsquo;s instinct is right, with one important split. &ldquo;Showing up in ChatGPT&rdquo; is not one thing &mdash; it is three mechanics running on different clocks, and they respond to completely different work. Content wins the first outright. It barely touches the second. The third is a long game nobody can yet prove.</p>
-
-    <div class="split">
-      <div class="mech">
-        <div class="mech-kicker">Mechanic one</div>
-        <h4>Cited as the source</h4>
-        <p>Someone asks an assistant a question. It retrieves a handful of pages and quotes the one that answers most cleanly, with a link. This is winnable with content alone, it does not need position one, and it is where all 24 posts in this plan are aimed.</p>
-        <dl>
-          <dt>Triggered by</dt><dd>Informational questions &mdash; &ldquo;retail or market value?&rdquo;, &ldquo;what do I do if my claim is rejected?&rdquo;</dd>
-          <dt>Won by</dt><dd>Answer-first structure, self-contained sections, named and dated sources, FAQ schema</dd>
-          <dt>Timeline</dt><dd>Weeks, on low-competition SA questions</dd>
-        </dl>
-      </div>
-      <div class="mech mech-b">
-        <div class="mech-kicker">Mechanic two</div>
-        <h4>Named as the recommendation</h4>
-        <p>Someone asks for the best broker in Krugersdorp. The model assembles a shortlist from what <i>other</i> sites say about you &mdash; profiles, reviews, directories, registers. Your own blog is nearly irrelevant to this, which is the part worth being blunt about with Anton.</p>
-        <dl>
-          <dt>Triggered by</dt><dd>Commercial prompts &mdash; &ldquo;best short-term insurance broker near Krugersdorp&rdquo;</dd>
-          <dt>Won by</dt><dd>Google Business Profile, Hello Peter, broker directories, FSP register, consistent NAP</dd>
-          <dt>Timeline</dt><dd>Gated on the GBP claim, not on content</dd>
-        </dl>
-      </div>
-      <div class="mech mech-c">
-        <div class="mech-kicker">Mechanic three</div>
-        <h4>Known before the search</h4>
-        <p>A model answers from what it absorbed in training rather than looking anything up. Common Crawl &mdash; 2.3 billion pages a month, free and open &mdash; is the corpus most models are assumed to draw on. Being in it is cheap. Proving it moved anything is not.</p>
-        <dl>
-          <dt>Triggered by</dt><dd>Any prompt the model feels confident enough not to search on</dd>
-          <dt>Won by</dt><dd>Plain crawlable text, no crawler blocking, links from sites close to the web&rsquo;s core</dd>
-          <dt>Timeline</dt><dd>Six to eight months at best, and currently unproven</dd>
-        </dl>
-      </div>
-    </div>
-
-    <div class="evidence">
-      <p><strong>We have proof of this from another client on the same Ubersuggest account.</strong> A B2B services business is already tracked for AI Search Visibility across ChatGPT and Gemini. Over 10 tracked prompts and 20 answers it appears in 20% of responses, at average rank 10.5, with 3.54% share of voice and 100% positive sentiment &mdash; against the category leader at 30%.</p>
-      <div class="figs">
-        <div class="fig"><b>20%</b><span>Answer visibility</span></div>
-        <div class="fig"><b>10.5</b><span>Average rank</span></div>
-        <div class="fig"><b>3.5%</b><span>Share of voice</span></div>
-        <div class="fig"><b>80 / 40</b><span>Commercial vs informational prompts</span></div>
-      </div>
-      <p>The revealing part is <i>why</i> the models mentioned it. These are the phrases the assistants actually attached to the brand:</p>
-      <ul class="quotes">
-        <li>&ldquo;currently highly rated on Clutch&rdquo;</li>
-        <li>&ldquo;was a 2026 finalist for Best Outsourced Contact Centre&rdquo;</li>
-        <li>&ldquo;highly rated for its owner-led approach&rdquo;</li>
-      </ul>
-      <p><strong>Not one of those came from that company&rsquo;s own blog.</strong> Every one is third-party corroboration &mdash; a review platform, an industry award, a reputation someone else described. That is mechanic two in action, and it is the strongest argument for treating the Google Business Profile claim and a review base as part of the content plan rather than as a separate admin task.</p>
-    </div>
-
-    <h3>The reputation half, and why it outranks our blog</h3>
-    <p>Stephen Burns and James Dooley made the same point from the practitioner side in their recent session on LLM ranking factors, and Dooley put it first on his list: what drives brand mentions is <i>consensus of reputation</i> &mdash; awards, reviews and testimonials syndicated across third-party sites, and case studies that tie your entity to other named entities. His argument is that this has to be echoed across the internet rather than asserted on your own website, because a model weighing two candidates takes the one other sources corroborate. The tracked account above arrived at the same conclusion independently, which is about as good as evidence gets in this field.</p>
-    <p>That reframes something I got too cautious about in the first version of this plan. Dooley&rsquo;s payoff for a strong reputation base is comparison and &ldquo;best of&rdquo; content &mdash; and I ruled that out on FAIS grounds. The distinction that resolves it: <b>Best Care should not publish rankings of insurers, but Best Care should absolutely be featured in other people&rsquo;s rankings of brokers.</b> Being listed in a third-party &ldquo;best insurance brokers on the West Rand&rdquo; piece carries none of the regulatory weight of publishing one, and it is worth considerably more to mechanic two. The work is outreach, not writing.</p>
-    <p>One tactic from that conversation we are not taking. Dooley suggests buying an industry award if you don&rsquo;t have one &mdash; &ldquo;whoever buys the largest table at the award ceremony seems to win.&rdquo; That may be survivable in the agency world. For an authorised FSP, paying for a credibility marker that consumers reasonably read as independent is a reputational and plausibly a regulatory problem, and it is exactly the kind of thing that ages badly. Entering real awards on merit is fine and worth doing &mdash; the FIA&rsquo;s annual intermediary awards are the obvious South African candidate, and someone should confirm the current categories and entry dates.</p>
-    <div class="rails">
-      <div class="rail">
-        <div class="rail-mark">1</div>
-        <p><b>Claim the Google Business Profile.</b> Still the binding constraint. Needs Stacey to film the on-site video verification Google is requiring. Nothing else on this list works properly until the profile is controlled.</p>
-      </div>
-      <div class="rail rail-hard">
-        <div class="rail-mark">!</div>
-        <p><b>Resolve the address conflict before claiming it.</b> The site&rsquo;s own business profile says <b>3 Rooiberg Street, Noordheuwel</b>. The unclaimed Google listing says <b>260 Voortrekker Road, Monument</b>. The phone number matches across both, so this is one business with two addresses on the open internet. That is precisely the inconsistency that makes a model hedge or drop a small brand from a shortlist, and it needs an answer from Stacey before anything else is published.</p>
-      </div>
-      <div class="rail">
-        <div class="rail-mark">2</div>
-        <p><b>Build a review base.</b> The Google listing currently sits at 3.5 stars from two reviews, which reads worse than having none. For a brokerage with a long client list this is the cheapest reputation lever available: ask, consistently, on Google and Hello Peter.</p>
-      </div>
-      <div class="rail">
-        <div class="rail-mark">3</div>
-        <p><b>Get listed in South African broker and financial directories</b>, with the FSP number and address identical to the site every time. Directory pages are one of the page types these models demonstrably pull from when assembling a shortlist.</p>
-      </div>
-      <div class="rail">
-        <div class="rail-mark">4</div>
-        <p><b>Publish anonymised claim case studies</b> &mdash; Dooley&rsquo;s entity-to-entity point, adapted for a regulated business. A commercial client who agreed to be named is worth more than ten generic testimonials, but every one needs explicit written consent and POPIA-safe anonymisation of anything that isn&rsquo;t.</p>
-      </div>
-    </div>
-
-    <h3>What this changes about how we write</h3>
-    <p>Every post runs through the <code>/blog-article-hybrid</code> skill rather than being drafted freehand. That format already does most of what citation rewards: a quick-answer block in the first 100 words, section headings phrased as questions where they map to a real query, each section self-contained enough to be lifted out of context and still make sense, a comparison table, an FAQ accordion with matching FAQPage schema, and an E-E-A-T author bio. We&rsquo;re using the hybrid variant specifically so the articles still read like articles instead of one long FAQ &mdash; an assistant will happily quote prose, and a human reader won&rsquo;t stay for a wall of questions.</p>
-    <p>Three additions on top of the skill&rsquo;s defaults, all specific to this client. Every factual claim gets a named, dated South African source, because a model choosing between two answers takes the attributable one. Every article states plainly that Best Care is an intermediary and not an insurer, so the entity is described correctly when it is summarised. And the rand figures, FSP number and office details must be phrased identically everywhere they appear &mdash; inconsistent entity details are the most common reason a model hedges or omits a small brand.</p>
-
-    <h3>Technical pre-flight</h3>
-    <p>Burns&rsquo; headline warning is that crawler blocking is the quiet killer &mdash; he puts it at <b>over 35% of all websites</b>, including major chains that are pouring budget into AI visibility while their own CDN turns the crawlers away, unaware. So this is worth checking properly rather than assuming.</p>
-    <div class="rails">
-      <div class="rail">
-        <div class="rail-mark">&#10003;</div>
-        <p><b>No blocking in the repo.</b> <code>netlify.toml</code> contains a build block and one cache header for fingerprinted assets. No WAF rules, no bot filtering, no user-agent gates. <code>robots.txt</code> is <code>Allow: /</code> with no AI-crawler exclusions, so GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, CCBot and Google-Extended all have access.</p>
-      </div>
-      <div class="rail">
-        <div class="rail-mark">&#9633;</div>
-        <p><b>Still to confirm in the Netlify dashboard.</b> Bot protection and firewall settings are account-level and never appear in the repo, so a clean <code>netlify.toml</code> does not prove we&rsquo;re open. Someone needs to look at the dashboard once the domain is pointed and the site is actually serving.</p>
-      </div>
-      <div class="rail">
-        <div class="rail-mark">&#10003;</div>
-        <p><b>Rendering is already right.</b> CCBot crawls plain text only &mdash; it does not execute JavaScript and does not see images or video. The site is prerendered and a no-JavaScript check passed during the launch audit, so the article body is in the served HTML rather than behind a hydration step. This matters for the hybrid format too: infographics carry no weight with these crawlers, so anything an image conveys must also exist as text.</p>
-      </div>
-      <div class="rail">
-        <div class="rail-mark">&#10003;</div>
-        <p><b><code>llms.txt</code> fixed.</b> It described Best Care as a &ldquo;<b>proposed</b> South African short-term insurance brokerage website&rdquo; &mdash; a launch-draft artefact sitting in the one file written specifically to tell models what this business is. It now opens with the real entity and carries a business identity block: legal name, registration number, FSP 8754, office, phone and email, so the canonical facts are in one machine-readable place.</p>
-      </div>
-      <div class="rail rail-hard">
-        <div class="rail-mark">!</div>
-        <p><b>Stale pre-launch copy still on the site.</b> FSP 8754 is live in the site content and in the <code>FinancialService</code> schema, but several pages still say the FSP details &ldquo;must be verified before publication&rdquo; and the About page still describes the brokerage in the future tense. A model reading those pages will describe Best Care as unverified and not yet trading. Worth a cleanup pass before week 1.</p>
-      </div>
-    </div>
-
-    <h3>On Common Crawl and harmonic centrality</h3>
-    <p>The most interesting idea in that session is also the least proven, so it gets a proportionate amount of our attention. CCBot doesn&rsquo;t rank by PageRank; it uses <i>harmonic centrality</i> &mdash; how close your domain sits to the web&rsquo;s trusted core, weighted by inverse distance. Burns&rsquo; analogy: PageRank asks how many roads lead to your house, harmonic centrality asks how close you are to the centre of the city. The practical consequence is that one link from a site near the core moves you more than a pile of mid-tier links, which is a genuinely different way to buy links.</p>
-    <p>Dooley is running a 200-domain experiment to find out whether any of this reaches current models, and he is candid that after ten weeks it is inconclusive and he expects six to eight months before it tells him anything. Burns confirms Common Crawl keeps no logs and cannot say who downloads the corpus, and that the labs filter it heavily. <b>So we are not building a strategy on this.</b> What we are doing is using it as a free tiebreaker: when we do go after links for Best Care &mdash; directories, local business associations, industry bodies &mdash; check harmonic centrality alongside the usual authority score. A DR 10 site close to the core may be worth more than a DR 30 one that isn&rsquo;t, and almost nobody selling links prices that in yet. Free checkers at <code>audit.stephenburns.ai</code> and the raw graph at <code>webgraph.crawl.org</code>.</p>
-
-    <h3>One thing to do before week 1</h3>
-    <p>The research point from that session is the cheapest win on this page: before publishing, look at what <i>kind</i> of page these models actually extract for our queries. In the agency niche it turned out to be pricing pages, review and testimonial pages, and directory listings &mdash; not blog posts. If South African insurance queries pull mostly from insurer product pages, the ombud, and comparison sites, that tells us where to aim and what not to waste three posts a week on. An hour of running our ten prompts and reading the citations, before the first draft, is worth more than any single article in this plan.</p>
-  </section>
-
-  <section>
     <h2>Opportunity map</h2>
-    <p class="section-note">Ten clusters, ranked by the ratio of reachable volume to difficulty. Cluster volume sums the exact-match variants we&rsquo;d target with one page plus its internal links. SD is Ubersuggest SEO Difficulty (0&ndash;100); CPC is what advertisers pay per click in rand, which is our best proxy for how commercially valuable the visitor is.</p>
+    <p class="section-note">Ten clusters ranked by reachable volume against difficulty. Cluster volume sums the variants one page can target. SD is SEO difficulty (0&ndash;100); CPC is in rand and indicates how commercially valuable the visitor is.</p>
     <div class="scroller">
       <table>
         <thead>
@@ -722,7 +507,7 @@
           <tr>
             <td class="rank">8</td>
             <td class="kw">What a broker does<span class="sub">Broker vs direct insurer</span></td>
-            <td>insurance broker meaning<span class="sub">SD 29, paid difficulty 4</span></td>
+            <td>insurance broker meaning<span class="sub">SD 29</span></td>
             <td class="num">170</td>
             <td class="num">~580</td>
             <td class="num">R7.84</td>
@@ -753,20 +538,20 @@
 
   <section>
     <h2>Who currently owns these results</h2>
-    <p class="section-note">Sampled from live SERPs for &ldquo;e hailing insurance&rdquo;, &ldquo;short term insurance ombudsman&rdquo; and &ldquo;car insurance calculator south africa&rdquo;. The pattern matters more than the individual numbers: these are direct insurers ranking product pages, not publishers ranking articles. A DA 19 site sits at position 11 on e-hailing, which is the clearest signal that the door is open.</p>
+    <p class="section-note">Sampled from live results for &ldquo;e hailing insurance&rdquo;, &ldquo;short term insurance ombudsman&rdquo; and &ldquo;car insurance calculator south africa&rdquo;. These are direct insurers ranking product pages, not publishers ranking articles.</p>
     <div class="scroller">
       <table>
         <thead>
           <tr><th>Domain</th><th class="num">DA</th><th>What ranks</th><th>Read</th></tr>
         </thead>
         <tbody>
-          <tr><td class="kw">discovery.co.za</td><td class="num">64</td><td>Car insurance calculator</td><td>Untouchable on head terms</td></tr>
-          <tr><td class="kw">santam.co.za</td><td class="num">45</td><td>Product and quote pages</td><td>Untouchable on head terms</td></tr>
+          <tr><td class="kw">discovery.co.za</td><td class="num">64</td><td>Car insurance calculator</td><td>Out of reach on head terms</td></tr>
+          <tr><td class="kw">santam.co.za</td><td class="num">45</td><td>Product and quote pages</td><td>Out of reach on head terms</td></tr>
           <tr><td class="kw">outsurance.co.za</td><td class="num">44</td><td>Calculator, ombud explainer</td><td>Beatable on depth, not authority</td></tr>
           <tr><td class="kw">hippo.co.za</td><td class="num">39</td><td>Comparison and quote funnels</td><td>Aggregator &mdash; different intent to ours</td></tr>
-          <tr><td class="kw">naked.insure</td><td class="num">39</td><td>&ldquo;What does car insurance cost in 2026&rdquo;</td><td>The model to copy: dated, specific guides</td></tr>
+          <tr><td class="kw">naked.insure</td><td class="num">39</td><td>&ldquo;What does car insurance cost in 2026&rdquo;</td><td>The model to follow: dated, specific guides</td></tr>
           <tr><td class="kw">nfosa.co.za</td><td class="num">38</td><td>Ombud landing pages</td><td>Cite it, don&rsquo;t compete with it</td></tr>
-          <tr><td class="kw">aon.co.za</td><td class="num">37</td><td>E-hailing insight page</td><td>A broker ranking on insight &mdash; proof of concept</td></tr>
+          <tr><td class="kw">aon.co.za</td><td class="num">37</td><td>E-hailing insight page</td><td>A broker ranking on insight</td></tr>
           <tr><td class="kw">autogen.co.za</td><td class="num">35</td><td>Motor blog, 21&ndash;63 visits/post</td><td>Sets the realistic per-post ceiling</td></tr>
           <tr><td class="kw">businessinsurance.co.za</td><td class="num">19</td><td>E-hailing guide, position 11</td><td>Low authority still places &mdash; our opening</td></tr>
         </tbody>
@@ -776,118 +561,118 @@
 
   <section>
     <h2>Weeks 1&ndash;8</h2>
-    <p class="section-note">Three slots a week, each with a different job. Anchor posts attack a priority cluster and carry the internal links. Product posts support one existing <code>/products/</code> page and are the ones most likely to produce a quote enquiry. Quick answers are short, cheap to write, fast to sign off, and exist to build out FAQ schema coverage.</p>
+    <p class="section-note">Three slots a week, each with a different job. Anchors attack a priority cluster and carry the internal links. Product posts support one existing <code>/products/</code> page and are most likely to produce a quote enquiry. Quick answers are short, fast to sign off, and build out FAQ coverage.</p>
     <div class="key">
-      <span><i class="swatch" style="background: var(--sand)"></i> Anchor &mdash; cluster piece, 1,200&ndash;1,800 words</span>
-      <span><i class="swatch" style="background: var(--teal)"></i> Product &mdash; supports a product page, 900&ndash;1,200 words</span>
-      <span><i class="swatch" style="background: var(--rule)"></i> Quick answer &mdash; 500&ndash;700 words, FAQ schema</span>
+      <span><i class="swatch" style="background: var(--sand)"></i> Anchor &mdash; 1,200&ndash;1,800 words</span>
+      <span><i class="swatch" style="background: var(--teal)"></i> Product &mdash; 900&ndash;1,200 words</span>
+      <span><i class="swatch" style="background: var(--rule)"></i> Quick answer &mdash; 500&ndash;700 words</span>
     </div>
 
     <div class="weeks">
 
       <article class="week">
-        <div class="week-head"><span class="week-n">Week 1</span><span class="week-theme">Open on the two biggest unclaimed gaps</span></div>
+        <div class="week-head"><span class="week-n">Week 1</span><span class="week-theme">The two biggest unclaimed gaps</span></div>
         <div class="slots">
           <div class="slot slot-anchor">
             <div class="slot-label">Anchor</div>
             <div class="slot-body">
               <div class="slot-title">Retail, market or trade value &mdash; which one should your car be insured for?</div>
-              <div class="slot-data"><code>retail value vs market value</code> 1,000/mo &middot; SD 13 &middot; R8.59 &nbsp;|&nbsp; links to /products/comprehensive-car-insurance</div>
+              <div class="slot-data"><code>retail value vs market value</code> 1,000/mo &middot; SD 13 &nbsp;|&nbsp; /products/comprehensive-car-insurance</div>
             </div>
           </div>
           <div class="slot slot-product">
             <div class="slot-label">Product</div>
             <div class="slot-body">
               <div class="slot-title">E-hailing insurance in South Africa: what Uber and Bolt drivers actually need</div>
-              <div class="slot-data"><code>e hailing insurance</code> 590/mo &middot; SD 13 &middot; R28.30 &nbsp;|&nbsp; links to /products/commercial-vehicle-fleet-insurance</div>
+              <div class="slot-data"><code>e hailing insurance</code> 590/mo &middot; SD 13 &middot; R28.30 &nbsp;|&nbsp; /products/commercial-vehicle-fleet-insurance</div>
             </div>
           </div>
           <div class="slot slot-quick">
             <div class="slot-label">Quick answer</div>
             <div class="slot-body">
               <div class="slot-title">What does &ldquo;sum insured&rdquo; mean on your policy schedule?</div>
-              <div class="slot-data">Feeds the underinsurance cluster &middot; sets up week 4</div>
+              <div class="slot-data">Sets up the week 4 underinsurance anchor</div>
             </div>
           </div>
         </div>
       </article>
 
       <article class="week">
-        <div class="week-head"><span class="week-n">Week 2</span><span class="week-theme">The rejected-claim cluster &mdash; highest combined volume on the board</span></div>
+        <div class="week-head"><span class="week-n">Week 2</span><span class="week-theme">Rejected claims &mdash; highest combined volume on the board</span></div>
         <div class="slots">
           <div class="slot slot-anchor">
             <div class="slot-label">Anchor</div>
             <div class="slot-body">
               <div class="slot-title">Your claim was rejected. Here&rsquo;s how to escalate it to the National Financial Ombud</div>
-              <div class="slot-data"><code>ombudsman for short term insurance</code> 1,000/mo &middot; <code>short term insurance ombudsman south africa</code> 880/mo &middot; SD 14&ndash;15 &nbsp;|&nbsp; links to /claims</div>
+              <div class="slot-data"><code>ombudsman for short term insurance</code> 1,000/mo &middot; <code>short term insurance ombudsman south africa</code> 880/mo &middot; SD 14&ndash;15 &nbsp;|&nbsp; /claims</div>
             </div>
           </div>
           <div class="slot slot-product">
             <div class="slot-label">Product</div>
             <div class="slot-body">
               <div class="slot-title">What public liability insurance covers in South Africa &mdash; and who needs it</div>
-              <div class="slot-data"><code>public liability insurance means</code> 390/mo &middot; SD 26 &middot; R19.98 &nbsp;|&nbsp; links to /products/public-liability-insurance</div>
+              <div class="slot-data"><code>public liability insurance means</code> 390/mo &middot; SD 26 &middot; R19.98 &nbsp;|&nbsp; /products/public-liability-insurance</div>
             </div>
           </div>
           <div class="slot slot-quick">
             <div class="slot-label">Quick answer</div>
             <div class="slot-body">
               <div class="slot-title">Does car insurance cover engine damage?</div>
-              <div class="slot-data"><code>does insurance cover engine damage</code> 50/mo &middot; SD 18 &middot; mechanical breakdown exclusion explainer</div>
+              <div class="slot-data"><code>does insurance cover engine damage</code> 50/mo &middot; SD 18 &middot; mechanical breakdown exclusion</div>
             </div>
           </div>
         </div>
       </article>
 
       <article class="week">
-        <div class="week-head"><span class="week-n">Week 3</span><span class="week-theme">Pricing questions &mdash; high intent, nobody explains them properly</span></div>
+        <div class="week-head"><span class="week-n">Week 3</span><span class="week-theme">Pricing questions &mdash; high intent, poorly answered</span></div>
         <div class="slots">
           <div class="slot slot-anchor">
             <div class="slot-label">Anchor</div>
             <div class="slot-body">
               <div class="slot-title">How car insurance premiums are calculated in South Africa: the rating factors that move your price</div>
-              <div class="slot-data"><code>calculating car insurance</code> 720/mo &middot; <code>how much is car insurance</code> 320/mo &middot; SD 19&ndash;33 &nbsp;|&nbsp; links to /get-a-quote</div>
+              <div class="slot-data"><code>calculating car insurance</code> 720/mo &middot; <code>how much is car insurance</code> 320/mo &middot; SD 19&ndash;33 &nbsp;|&nbsp; /get-a-quote</div>
             </div>
           </div>
           <div class="slot slot-product">
             <div class="slot-label">Product</div>
             <div class="slot-body">
               <div class="slot-title">Sectional title insurance: what the body corporate covers, and what you still have to insure</div>
-              <div class="slot-data"><code>sectional title insurance</code> 90/mo &middot; SD 13 &nbsp;|&nbsp; links to /products/home-contents-insurance</div>
+              <div class="slot-data"><code>sectional title insurance</code> 90/mo &middot; SD 13 &nbsp;|&nbsp; /products/home-contents-insurance</div>
             </div>
           </div>
           <div class="slot slot-quick">
             <div class="slot-label">Quick answer</div>
             <div class="slot-body">
               <div class="slot-title">What is an insurance excess, and can you lower it? <span class="tag-refresh">Refresh</span></div>
-              <div class="slot-data"><code>insurance excess meaning</code> 390/mo &middot; SD 21 &middot; paid difficulty 9 &nbsp;|&nbsp; rewrite of /resources/car-insurance-excess-south-africa</div>
+              <div class="slot-data"><code>insurance excess meaning</code> 390/mo &middot; SD 21 &nbsp;|&nbsp; rewrite of /resources/car-insurance-excess-south-africa</div>
             </div>
           </div>
         </div>
       </article>
 
       <article class="week">
-        <div class="week-head"><span class="week-n">Week 4</span><span class="week-theme">Underinsurance &mdash; the story only a broker tells</span></div>
+        <div class="week-head"><span class="week-n">Week 4</span><span class="week-theme">Underinsurance</span></div>
         <div class="slots">
           <div class="slot slot-anchor">
             <div class="slot-label">Anchor</div>
             <div class="slot-body">
               <div class="slot-title">Underinsurance and the average clause: why a R500,000 claim can pay out R300,000</div>
-              <div class="slot-data"><code>household insurance calculator</code> 320/mo &middot; <code>household insurance cost</code> 320/mo &middot; SD 44&ndash;47 &nbsp;|&nbsp; links to /products/home-contents-insurance</div>
+              <div class="slot-data"><code>household insurance calculator</code> 320/mo &middot; <code>household insurance cost</code> 320/mo &middot; SD 44&ndash;47 &nbsp;|&nbsp; /products/home-contents-insurance</div>
             </div>
           </div>
           <div class="slot slot-product">
             <div class="slot-label">Product</div>
             <div class="slot-body">
               <div class="slot-title">When the bakkie becomes a business asset: private cover vs commercial vehicle insurance</div>
-              <div class="slot-data"><code>business car insurance</code> 390/mo &middot; SD 45 &nbsp;|&nbsp; links to /products/commercial-vehicle-fleet-insurance</div>
+              <div class="slot-data"><code>business car insurance</code> 390/mo &middot; SD 45 &nbsp;|&nbsp; /products/commercial-vehicle-fleet-insurance</div>
             </div>
           </div>
           <div class="slot slot-quick">
             <div class="slot-label">Quick answer</div>
             <div class="slot-body">
               <div class="slot-title">Short-term vs long-term insurance: what&rsquo;s the difference?</div>
-              <div class="slot-data"><code>difference between short term insurance and long term insurance</code> 90/mo &middot; SD 5 &mdash; lowest-difficulty term on the board</div>
+              <div class="slot-data"><code>difference between short term insurance and long term insurance</code> 90/mo &middot; SD 5 &mdash; lowest difficulty on the board</div>
             </div>
           </div>
         </div>
@@ -900,14 +685,14 @@
             <div class="slot-label">Anchor</div>
             <div class="slot-body">
               <div class="slot-title">What does buildings insurance cover in South Africa?</div>
-              <div class="slot-data"><code>building insurance south africa</code> 720/mo &middot; SD 27 &middot; R21.65 &nbsp;|&nbsp; links to /products/buildings-insurance</div>
+              <div class="slot-data"><code>building insurance south africa</code> 720/mo &middot; SD 27 &middot; R21.65 &nbsp;|&nbsp; /products/buildings-insurance</div>
             </div>
           </div>
           <div class="slot slot-product">
             <div class="slot-label">Product</div>
             <div class="slot-body">
               <div class="slot-title">Professional indemnity insurance: which South African professions actually need it</div>
-              <div class="slot-data">Spoke off the existing PI-vs-PL comparison &nbsp;|&nbsp; links to /products/professional-indemnity-insurance</div>
+              <div class="slot-data">Spoke off the existing PI-vs-PL comparison &nbsp;|&nbsp; /products/professional-indemnity-insurance</div>
             </div>
           </div>
           <div class="slot slot-quick">
@@ -921,34 +706,34 @@
       </article>
 
       <article class="week">
-        <div class="week-head"><span class="week-n">Week 6</span><span class="week-theme">Claims mechanics &mdash; the content that earns the broker relationship</span></div>
+        <div class="week-head"><span class="week-n">Week 6</span><span class="week-theme">Claims mechanics</span></div>
         <div class="slots">
           <div class="slot slot-anchor">
             <div class="slot-label">Anchor</div>
             <div class="slot-body">
               <div class="slot-title">How to claim on car insurance in South Africa, step by step</div>
-              <div class="slot-data"><code>car insurance claim process south africa</code> 40/mo &middot; <code>insurance claim process for car</code> 40/mo &middot; SD 12&ndash;19 &nbsp;|&nbsp; links to /claims</div>
+              <div class="slot-data"><code>car insurance claim process south africa</code> 40/mo &middot; <code>insurance claim process for car</code> 40/mo &middot; SD 12&ndash;19 &nbsp;|&nbsp; /claims</div>
             </div>
           </div>
           <div class="slot slot-product">
             <div class="slot-label">Product</div>
             <div class="slot-body">
               <div class="slot-title">Goods in transit or marine cargo &mdash; which one covers your load?</div>
-              <div class="slot-data">Spoke off the existing GIT checklist &nbsp;|&nbsp; links to /products/goods-in-transit-insurance</div>
+              <div class="slot-data">Spoke off the existing GIT checklist &nbsp;|&nbsp; /products/goods-in-transit-insurance</div>
             </div>
           </div>
           <div class="slot slot-quick">
             <div class="slot-label">Quick answer</div>
             <div class="slot-body">
               <div class="slot-title">What does an insurance broker actually do for you?</div>
-              <div class="slot-data"><code>insurance broker meaning</code> 170/mo &middot; <code>duties of an insurance broker</code> 30/mo &middot; SD 6&ndash;29 &nbsp;|&nbsp; links to /why-use-a-broker</div>
+              <div class="slot-data"><code>insurance broker meaning</code> 170/mo &middot; <code>duties of an insurance broker</code> 30/mo &nbsp;|&nbsp; /why-use-a-broker</div>
             </div>
           </div>
         </div>
       </article>
 
       <article class="week">
-        <div class="week-head"><span class="week-n">Week 7</span><span class="week-theme">Cost transparency across household and commercial</span></div>
+        <div class="week-head"><span class="week-n">Week 7</span><span class="week-theme">Cost transparency</span></div>
         <div class="slots">
           <div class="slot slot-anchor">
             <div class="slot-label">Anchor</div>
@@ -961,34 +746,34 @@
             <div class="slot-label">Product</div>
             <div class="slot-body">
               <div class="slot-title">Business interruption insurance: what actually triggers a payout <span class="tag-refresh">Refresh</span></div>
-              <div class="slot-data">Add indemnity period and claim-trigger detail to the existing guide &nbsp;|&nbsp; links to /products/business-interruption-insurance</div>
+              <div class="slot-data">Add indemnity period and claim triggers &nbsp;|&nbsp; /products/business-interruption-insurance</div>
             </div>
           </div>
           <div class="slot slot-quick">
             <div class="slot-label">Quick answer</div>
             <div class="slot-body">
               <div class="slot-title">Do you need public liability cover for a one-off event?</div>
-              <div class="slot-data"><code>public liability insurance event</code> 40/mo &middot; SD 29 &middot; markets, weddings, church fetes</div>
+              <div class="slot-data"><code>public liability insurance event</code> 40/mo &middot; markets, weddings, church fetes</div>
             </div>
           </div>
         </div>
       </article>
 
       <article class="week">
-        <div class="week-head"><span class="week-n">Week 8</span><span class="week-theme">Build the hub that links everything published so far</span></div>
+        <div class="week-head"><span class="week-n">Week 8</span><span class="week-theme">The hub that links everything published so far</span></div>
         <div class="slots">
           <div class="slot slot-anchor">
             <div class="slot-label">Anchor</div>
             <div class="slot-body">
               <div class="slot-title">Every type of short-term insurance in South Africa, explained</div>
-              <div class="slot-data"><code>examples of short term insurance</code> 430/mo &middot; <code>types of short term insurance</code> 50/mo &middot; SD 8&ndash;17 &nbsp;|&nbsp; hub page linking all 36 product pages</div>
+              <div class="slot-data"><code>examples of short term insurance</code> 430/mo &middot; <code>types of short term insurance</code> 50/mo &middot; SD 8&ndash;17 &nbsp;|&nbsp; hub linking all 36 product pages</div>
             </div>
           </div>
           <div class="slot slot-product">
             <div class="slot-label">Product</div>
             <div class="slot-body">
               <div class="slot-title">Cyber insurance for small South African businesses <span class="tag-refresh">Refresh</span></div>
-              <div class="slot-data">Merge and update the two existing cyber pieces &nbsp;|&nbsp; links to /products/cyber-insurance</div>
+              <div class="slot-data">Merge and update the two existing cyber pieces &nbsp;|&nbsp; /products/cyber-insurance</div>
             </div>
           </div>
           <div class="slot slot-quick">
@@ -1006,25 +791,25 @@
 
   <section>
     <h2>Backlog, ranked</h2>
-    <p class="section-note">What weeks 9&ndash;16 draw from, in priority order. Three of these are seasonal and should be pulled forward: caravan, trailer and travel cover want to publish in October ahead of the December holidays, and storm and hail content wants to be live before the Gauteng summer storm season.</p>
+    <p class="section-note">What weeks 9&ndash;16 draw from. Three are seasonal and should be pulled forward: caravan, trailer and travel cover want to publish in October ahead of the December holidays, and storm and hail content before the Gauteng summer storms.</p>
     <div class="scroller">
       <table>
         <thead>
           <tr><th>Working title</th><th>Supports</th><th>Note</th></tr>
         </thead>
         <tbody>
-          <tr><td class="kw">Insuring the caravan and trailer before the December trip</td><td>/products/caravan-trailer-insurance</td><td><b>Seasonal &mdash; publish October</b></td></tr>
-          <tr><td class="kw">Travel insurance: what South Africans underestimate</td><td>/products/travel-insurance</td><td><b>Seasonal &mdash; publish October</b></td></tr>
-          <tr><td class="kw">Hail and storm damage: what to photograph, and when to claim</td><td>/claims</td><td><b>Seasonal &mdash; publish November</b></td></tr>
+          <tr><td class="kw">Insuring the caravan and trailer before the December trip</td><td>/products/caravan-trailer-insurance</td><td><b>Seasonal &mdash; October</b></td></tr>
+          <tr><td class="kw">Travel insurance: what South Africans underestimate</td><td>/products/travel-insurance</td><td><b>Seasonal &mdash; October</b></td></tr>
+          <tr><td class="kw">Hail and storm damage: what to photograph, and when to claim</td><td>/claims</td><td><b>Seasonal &mdash; November</b></td></tr>
           <tr><td class="kw">Retail vs market value for bakkies and LDVs</td><td>Spoke off the week 1 anchor</td><td>Second bite at the biggest cluster</td></tr>
           <tr><td class="kw">Portable possessions: what &ldquo;all risk&rdquo; really means</td><td>/products/portable-possessions-insurance</td><td>Common misunderstanding at claim stage</td></tr>
           <tr><td class="kw">Employers&rsquo; liability vs COIDA: where one ends and the other starts</td><td>/products/employers-liability-insurance</td><td>SA-specific, nothing ranks well</td></tr>
           <tr><td class="kw">Fidelity guarantee vs commercial crime cover</td><td>/products/fidelity-guarantee-insurance</td><td>Genuinely confusing pair</td></tr>
           <tr><td class="kw">Contractors all risk: who carries the risk on site</td><td>/products/contractors-all-risk-insurance</td><td>Strong CPC, construction market</td></tr>
           <tr><td class="kw">Directors and officers cover for owner-managed companies</td><td>/products/directors-officers-insurance</td><td>Underserved for SMEs</td></tr>
-          <tr><td class="kw">Hospitality insurance for guesthouses and restaurants</td><td>/products/hospitality-insurance</td><td>Sector piece, good for outreach</td></tr>
+          <tr><td class="kw">Hospitality insurance for guesthouses and restaurants</td><td>/products/hospitality-insurance</td><td>Sector piece</td></tr>
           <tr><td class="kw">Engineering and machinery breakdown for manufacturers</td><td>/products/engineering-machinery-breakdown-insurance</td><td>West Rand industrial base</td></tr>
-          <tr><td class="kw">Trade credit insurance for South African exporters</td><td>/products/trade-credit-insurance</td><td>Low volume, very high value per lead</td></tr>
+          <tr><td class="kw">Trade credit insurance for South African exporters</td><td>/products/trade-credit-insurance</td><td>Low volume, high value per lead</td></tr>
           <tr><td class="kw">Motorcycle insurance: why quotes vary so widely</td><td>/products/motorcycle-insurance</td><td>Pairs with the rating-factors anchor</td></tr>
           <tr><td class="kw">Personal cyber insurance for South African households</td><td>/products/personal-cyber-insurance</td><td>Emerging &mdash; nobody owns it yet</td></tr>
         </tbody>
@@ -1033,51 +818,104 @@
   </section>
 
   <section>
+    <h2>Work outside the articles</h2>
+    <p class="section-note">This matters as much as the content. When someone asks Google or ChatGPT for a broker recommendation, the answer is assembled from what other sites say about Best Care &mdash; profiles, reviews, directories, registers &mdash; not from our own blog. Items 1 and 2 are blocking; 3 to 5 need a decision.</p>
+    <div class="rails">
+      <div class="rail rail-hard">
+        <div class="rail-mark">!</div>
+        <p><b>The address needs resolving first.</b> The site says <b>3 Rooiberg Street, Noordheuwel</b>. The unclaimed Google listing says <b>260 Voortrekker Road, Monument</b>. The phone number matches on both, so one business is showing two addresses publicly. This needs an answer from Stacey before anything else here proceeds.</p>
+      </div>
+      <div class="rail">
+        <div class="rail-mark">1</div>
+        <p><b>Claim the Google Business Profile.</b> Google is requiring video verification, so it needs Stacey to film it on site. Nothing else on this list works properly until the profile is controlled.</p>
+      </div>
+      <div class="rail">
+        <div class="rail-mark">2</div>
+        <p><b>Reviews.</b> The listing currently sits at 3.5 stars from two reviews, which reads worse than having none. Can we ask existing clients for Google and Hello Peter reviews, and is there a comfortable way to do it?</p>
+      </div>
+      <div class="rail rail-open">
+        <div class="rail-mark">3</div>
+        <p><b>Directory listings.</b> Worth scoping which South African broker and financial directories are worth being on, and getting the FSP number and address identical on each. Also worth checking whether the FIA intermediary awards are open and whether Best Care would be eligible to enter.</p>
+      </div>
+      <div class="rail rail-open">
+        <div class="rail-mark">4</div>
+        <p><b>Case studies &mdash; open question.</b> A named or anonymised claim story would be valuable, but we don&rsquo;t know yet whether that&rsquo;s possible given client confidentiality and POPIA. If it can be done with written consent, it&rsquo;s worth doing. If not, we drop it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Technical checklist</h2>
+    <div class="rails">
+      <div class="rail rail-ok">
+        <div class="rail-mark">&#10003;</div>
+        <p><b>Crawler access is open.</b> <code>robots.txt</code> allows everything, and there are no bot rules or user-agent blocks in the Netlify config. AI crawlers and search engines can all reach the site.</p>
+      </div>
+      <div class="rail rail-ok">
+        <div class="rail-mark">&#10003;</div>
+        <p><b>Pages are prerendered.</b> AI crawlers read text and don&rsquo;t run JavaScript, so the article body must be in the served HTML &mdash; it is. It also means anything an infographic conveys has to exist as text too.</p>
+      </div>
+      <div class="rail rail-ok">
+        <div class="rail-mark">&#10003;</div>
+        <p><b><code>llms.txt</code> corrected.</b> It described Best Care as a &ldquo;proposed&rdquo; brokerage website. It now opens with the real entity and carries a business identity block &mdash; legal name, registration number, FSP 8754, office, phone, email.</p>
+      </div>
+      <div class="rail rail-hard">
+        <div class="rail-mark">!</div>
+        <p><b>Stale pre-launch copy still on the site.</b> FSP 8754 is live in the content and schema, but several pages still say FSP details &ldquo;must be verified before publication&rdquo; and the About page is still written in the future tense. Needs a cleanup pass before week 1.</p>
+      </div>
+      <div class="rail">
+        <div class="rail-mark">&#9633;</div>
+        <p><b>To confirm once the domain is live.</b> Netlify&rsquo;s bot protection settings sit in the dashboard rather than the repo, so someone needs to check nothing is being blocked there.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
     <h2>Compliance guardrails</h2>
-    <p class="section-note">These are the rules the writing team works inside, not suggestions. Insurance is financially consequential content and Best Care is a licensed intermediary, not an insurer. Anton sees every post before it publishes.</p>
+    <p class="section-note">Insurance is financially consequential content and Best Care is a licensed intermediary, not an insurer. Anton sees every post before it publishes.</p>
     <div class="rails">
       <div class="rail rail-hard">
         <div class="rail-mark">&#10005;</div>
-        <p><b>We do not rank or compare named insurers.</b> That means walking away from roughly 5,200 searches a month &mdash; &ldquo;best car insurance South Africa&rdquo; (1,900/mo), &ldquo;cheap car insurance South Africa&rdquo; (1,600/mo), &ldquo;top 10 cheapest car insurance in South Africa&rdquo; (720/mo) and the rest of that family. A licensed FSP publishing a ranked list of insurers invites a fair-clear-and-not-misleading problem, and the site&rsquo;s own audit already commits to not claiming universal market access. Our version of that intent is the existing <i>How to compare insurance policies</i> guide, which teaches the comparison without doing it.</p>
+        <p><b>We don&rsquo;t rank or compare named insurers.</b> That means leaving about 5,200 searches a month on the table &mdash; &ldquo;best car insurance South Africa&rdquo; (1,900/mo), &ldquo;cheap car insurance South Africa&rdquo; (1,600/mo), &ldquo;top 10 cheapest car insurance&rdquo; (720/mo) and that whole family. Our version of that intent is the existing <i>How to compare insurance policies</i> guide, which teaches the comparison without doing it. Being featured in someone else&rsquo;s list of brokers is fine and worth pursuing.</p>
       </div>
       <div class="rail rail-hard">
         <div class="rail-mark">&#10005;</div>
-        <p><b>No premium figures presented as quotes.</b> Cost articles use dated, sourced ranges and say plainly that the only real number comes from a quote. Every figure carries its source and the month it was accurate.</p>
+        <p><b>No premium figures presented as quotes.</b> Cost articles use dated, sourced ranges and say plainly that the only real number comes from a quote.</p>
       </div>
       <div class="rail">
         <div class="rail-mark">&#8212;</div>
-        <p><b>&ldquo;May cover&rdquo;, never &ldquo;will cover&rdquo;.</b> No article promises a claims outcome, states that a specific loss is covered, or implies a policy wording we haven&rsquo;t seen. Cover descriptions stay general and point to the schedule.</p>
+        <p><b>&ldquo;May cover&rdquo;, never &ldquo;will cover&rdquo;.</b> No article promises a claims outcome or implies a policy wording we haven&rsquo;t seen.</p>
       </div>
       <div class="rail">
         <div class="rail-mark">&#8212;</div>
-        <p><b>Every post carries the FSP number and a link to the FAIS disclosure.</b> No longer blocked &mdash; Best Care Insurance Brokers CC, registration 1992/100995/23, Authorised FSP 8754 is live in the site content and in the <code>FinancialService</code> schema. Use that exact wording in every byline and disclosure so the entity reads identically everywhere.</p>
+        <p><b>FSP details on every post.</b> Best Care Insurance Brokers CC, registration 1992/100995/23, Authorised FSP 8754 &mdash; same wording every time, linked to the FAIS disclosure.</p>
       </div>
       <div class="rail">
         <div class="rail-mark">&#8212;</div>
-        <p><b>Named author and reviewer on every article.</b> The AEO audit flagged missing bylines as a live trust gap. We need one named, qualified reviewer &mdash; most sensibly Stacey &mdash; attached to each post before it goes live.</p>
+        <p><b>Named author and reviewer on every article.</b> Still outstanding. We need one named, qualified reviewer attached to each post before it goes live &mdash; who that is needs confirming.</p>
       </div>
       <div class="rail">
         <div class="rail-mark">&#8212;</div>
-        <p><b>No data capture inside articles.</b> Readers route to the existing quote and contact forms. Nothing new collects personal information until the POPIA sign-off on the policy-change form is closed out.</p>
+        <p><b>No data capture inside articles.</b> Readers route to the existing quote and contact forms.</p>
       </div>
     </div>
   </section>
 
   <section>
     <h2>Weekly rhythm</h2>
-    <p class="section-note">Built around Anton&rsquo;s sign-off and around batching Netlify deploys &mdash; all three posts ship in one commit, once a week.</p>
+    <p class="section-note">Built around Anton&rsquo;s sign-off, and around batching deploys &mdash; all three posts ship in one commit, once a week.</p>
     <div class="flow">
       <div class="step">
         <div class="step-day">Mon&ndash;Tue</div>
-        <p>Draft all three posts through the <code>/blog-article-hybrid</code> skill. Research and attribute every statistic to a named, dated South African source.</p>
+        <p>Draft all three posts. Every statistic attributed to a named, dated South African source.</p>
       </div>
       <div class="step">
         <div class="step-day">Wednesday</div>
-        <p>Internal pass: SEO check (title, meta, heading hierarchy, internal links, FAQ schema where questions are visible on the page) and a plain-language readability edit.</p>
+        <p>Internal pass: titles, meta descriptions, heading structure, internal links, FAQ markup, readability edit.</p>
       </div>
       <div class="step">
         <div class="step-day">Thursday</div>
-        <p>Compliance pack to Anton &mdash; three drafts, each with its sources listed and any wording we&rsquo;re unsure about flagged in the margin.</p>
+        <p>Compliance pack to Anton &mdash; three drafts, sources listed, anything uncertain flagged.</p>
       </div>
       <div class="step">
         <div class="step-day">Friday</div>
@@ -1085,42 +923,40 @@
       </div>
       <div class="step">
         <div class="step-day">Monday</div>
-        <p>Apply changes, build, and deploy all three posts plus the sitemap update in a single commit. Submit the new URLs in Search Console.</p>
+        <p>Apply changes, deploy all three posts and the sitemap update in one commit, submit the new URLs in Search Console.</p>
       </div>
     </div>
   </section>
 
   <section>
-    <h2>How we&rsquo;ll know it&rsquo;s working</h2>
-    <p>Because this is an LLM-first plan, the headline metric is citation, not clicks. The automated tracked-prompt slots on the Ubersuggest account are committed to another client, so Best Care gets measured the manual way: <b>one person, ten fixed prompts, run on the first Monday of each month</b> against ChatGPT, Gemini and Google AI Overviews, with the answer and any cited sources pasted into a sheet. It takes about twenty minutes. Because the prompts and the date are fixed, month-on-month movement is still real movement, and the cited-sources column doubles as ongoing competitor research &mdash; we find out who is being quoted instead of us.</p>
-    <p>Roughly two-thirds of the set mirrors the anchor posts, so we can see content converting into citations, and one-third is commercial, so we can see whether the brand is entering shortlists at all. Run these verbatim every month; changing the wording resets the baseline:</p>
-    <div class="scroller">
+    <h2>What to expect, and when</h2>
+    <p>Search Console and GA4 are live, so we have a clean baseline from launch. <b>For the first eight weeks the only useful Google metrics are indexation and impressions</b> &mdash; whether the posts are in the index and surfacing for the terms we targeted. Clicks lag that by months.</p>
+    <p>The per-post ceiling in this market is modest and worth being straight about. The best-performing informational post we found in South African motor insurance draws roughly 412 visits a month; most insurer blog posts land between 21 and 63. This works by accumulation, not by any single article: <b>10&ndash;15 posts before the internal linking starts to compound, and 6&ndash;9 months before organic traffic is worth reporting on.</b></p>
+    <p>Being quoted in an AI answer moves faster than ranking first, because it doesn&rsquo;t require position one &mdash; and the difficulty-13 clusters have thin coverage. We&rsquo;ll track it manually: ten fixed prompts, run on the first Monday of each month against ChatGPT, Gemini and Google&rsquo;s AI answers, with the response and any cited sources logged in a sheet. Twenty minutes a month, and the cited-sources column tells us who is being quoted instead of us.</p>
+    <div class="scroller" style="margin-top: 1.25rem;">
       <table>
         <thead>
-          <tr><th>Tracked prompt</th><th>Tests</th><th>Mechanic</th></tr>
+          <tr><th>Tracked prompt</th><th>Tests</th></tr>
         </thead>
         <tbody>
-          <tr><td class="kw">Should I insure my car for retail or market value in South Africa?</td><td>Week 1 anchor</td><td>Cited as source</td></tr>
-          <tr><td class="kw">Do I need special insurance to drive for Uber or Bolt in South Africa?</td><td>Week 1 product</td><td>Cited as source</td></tr>
-          <tr><td class="kw">What can I do if my insurance claim is rejected in South Africa?</td><td>Week 2 anchor</td><td>Cited as source</td></tr>
-          <tr><td class="kw">How are car insurance premiums calculated in South Africa?</td><td>Week 3 anchor</td><td>Cited as source</td></tr>
-          <tr><td class="kw">Who insures the geyser in a sectional title complex?</td><td>Weeks 3 &amp; 5</td><td>Cited as source</td></tr>
-          <tr><td class="kw">What is the average clause in household insurance?</td><td>Week 4 anchor</td><td>Cited as source</td></tr>
-          <tr><td class="kw">Is it better to use an insurance broker or go direct in South Africa?</td><td>Week 6 quick answer</td><td>Both</td></tr>
-          <tr><td class="kw">Best short-term insurance broker near Krugersdorp</td><td>Brand shortlisting</td><td>Named as recommendation</td></tr>
-          <tr><td class="kw">Insurance brokers on the West Rand</td><td>Local entity presence</td><td>Named as recommendation</td></tr>
-          <tr><td class="kw">Who is Best Care Insurance Brokers?</td><td>How the entity is described</td><td>Named as recommendation</td></tr>
+          <tr><td class="kw">Should I insure my car for retail or market value in South Africa?</td><td>Week 1 anchor</td></tr>
+          <tr><td class="kw">Do I need special insurance to drive for Uber or Bolt in South Africa?</td><td>Week 1 product</td></tr>
+          <tr><td class="kw">What can I do if my insurance claim is rejected in South Africa?</td><td>Week 2 anchor</td></tr>
+          <tr><td class="kw">How are car insurance premiums calculated in South Africa?</td><td>Week 3 anchor</td></tr>
+          <tr><td class="kw">Who insures the geyser in a sectional title complex?</td><td>Weeks 3 &amp; 5</td></tr>
+          <tr><td class="kw">What is the average clause in household insurance?</td><td>Week 4 anchor</td></tr>
+          <tr><td class="kw">Is it better to use an insurance broker or go direct in South Africa?</td><td>Week 6 quick answer</td></tr>
+          <tr><td class="kw">Best short-term insurance broker near Krugersdorp</td><td>Brand shortlisting</td></tr>
+          <tr><td class="kw">Insurance brokers on the West Rand</td><td>Local presence</td></tr>
+          <tr><td class="kw">Who is Best Care Insurance Brokers?</td><td>How the business is described</td></tr>
         </tbody>
       </table>
     </div>
-    <p>Alongside that, Search Console and GA4 (G-N031S8ETGL) are live, so we keep a clean organic baseline from launch. For the first eight weeks the useful Google metrics are indexation and impressions, not clicks.</p>
-    <p>The honest checkpoint is <b>week 12</b>, and it has two halves that must be judged separately. On the citation side we want Best Care appearing in at least a quarter of answers to the informational prompts &mdash; that is content doing its job, and it is the half we control. On the brand side, if the commercial prompts still return nothing, that is not a content failure and no number of articles will fix it; it means reputation is the binding constraint. Everything the practitioner evidence and our own tracked-account data says points the same way: the Google Business Profile claim, the address conflict, and a real review base are the highest-leverage work available, and none of it is writing.</p>
+    <p style="margin-top: 1.25rem;">The checkpoint is <b>week 12</b>, judged in two halves. On the informational prompts we want Best Care appearing in at least a quarter of answers &mdash; that is the content working, and it is the half we control. If the three commercial prompts still return nothing, that is not a content problem and more articles won&rsquo;t fix it: it means the Google Business Profile and reviews are the constraint.</p>
   </section>
 
   <footer>
-    <p>All search volumes, difficulty scores and CPC figures from Ubersuggest, South Africa (location 2710, English), pulled 15 September 2026. SEO Difficulty is a 0&ndash;100 estimate; CPC is in rand. Domain authority figures are Ubersuggest&rsquo;s estimates sampled from live SERPs on the same date. Competitor traffic figures are estimates, not measured data, and are used here only to set expectations about scale.</p>
-    <p>AI Search Visibility figures are from a separate, unrelated B2B services project on the same Ubersuggest account, covering ChatGPT and Gemini over 10 tracked prompts and 20 answers. They are quoted here only as evidence of how the measurement works and of what actually drives brand mentions &mdash; they are not Best Care&rsquo;s numbers. Best Care has no AISV baseline and will be measured manually; the account&rsquo;s tracked-prompt slots are committed elsewhere.</p>
-    <p>Practitioner claims about Common Crawl, harmonic centrality and reputation consensus are drawn from Stephen Burns (principal technical SEO, Into It; consultant to Common Crawl) and James Dooley in conversation on LLM ranking factors. Burns&rsquo; crawler-blocking and rendering points are verifiable and we have checked ours. The Common Crawl training-data claims are explicitly unproven by the people making them &mdash; Dooley&rsquo;s own 200-domain test was inconclusive at ten weeks &mdash; and are treated here as a link-selection tiebreaker, not a strategy.</p>
+    <p>Search volumes, difficulty scores and CPC figures from Ubersuggest, South Africa, 15 September 2026. SEO difficulty is a 0&ndash;100 estimate and CPC is in rand. Domain authority figures and competitor traffic are estimates, used to set expectations about scale rather than as measured data.</p>
   </footer>
 
 </div>
